@@ -16,3 +16,4 @@ test:
 
 deploy:
 	docker build -t conductor-app .
+	docker run -d --env-file ./jwtSecret.env -p 3001:3000 conductor-app

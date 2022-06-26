@@ -1,3 +1,4 @@
+![AWS CodeBuild](https://codebuild.us-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiRzZ4UFhOcWRnMWIwek0zYkR6YUdCYmlyVVhaSDNaQnVwdEcyZ1ZDUm40S1VDSzN0RjZwaEJRNTh6aUo0YlJvTHhxa2o3TUFBNEIrY3EyQkQ1d1ArTzlZPSIsIml2UGFyYW1ldGVyU3BlYyI6Im5ZQ3Y0c1N3WHo2ZEdOTkciLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
 # devops-conductor
 Port and deploy web app service
 
@@ -17,9 +18,23 @@ Port and deploy web app service
 3. `curl -v  http://127.0.0.1:3001/healthz/`
 4. Open a web browser: `http://127.0.0.1:3001/docs`
 
-### Deployment into aws cloud
+
+### Option 1. Quick and low-code full managed. AWS App Runner Deployment into cloud.
 1. Elastic Container Registery
 2. `aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com`
 3. docker build -t devops-conductor .
 4. docker tag devops-conductor:latest `<ecr endpoint>`/devops-conductor:latest
 5. docker push `<ecr endpoint>`/devops-conductor:latest
+6. Create AppRunner via webconsole or IaC
+
+### Option 2. Using IaC to deploy into aws. APIGatewa, Lambda, 
+### CI
+github Actions
+
+### IAC
+CDK api gateway & lambda integration. Assumes aws cli installed and account environment variables already setup
+1. mkdir conductorStack
+2. cdk init --language python
+3. uncomment cdk.Environment in app.py
+4. cdk bootstrap
+5. cdk deploy

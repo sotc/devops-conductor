@@ -1,4 +1,9 @@
+[![Test Multiple Python Versions](https://github.com/sotc/devops-conductor/actions/workflows/main.yml/badge.svg)](https://github.com/sotc/devops-conductor/actions/workflows/main.yml)
+
 ![AWS CodeBuild](https://codebuild.us-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiRzZ4UFhOcWRnMWIwek0zYkR6YUdCYmlyVVhaSDNaQnVwdEcyZ1ZDUm40S1VDSzN0RjZwaEJRNTh6aUo0YlJvTHhxa2o3TUFBNEIrY3EyQkQ1d1ArTzlZPSIsIml2UGFyYW1ldGVyU3BlYyI6Im5ZQ3Y0c1N3WHo2ZEdOTkciLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+
+
+
 # devops-conductor
 Port and deploy web app service
 

@@ -14,7 +14,7 @@ def decode_token(token):
         payload = jwt.decode(token, jwt_secret, algorithms=jwt_algorithm)
         return payload
     except JWTError:
-        raise HTTPException(status_code=401, detail='Invalid Token')
+        raise HTTPException(status_code=401, detail='Invalid Token') from JWTError
 
 @app.get("/")
 async def root():

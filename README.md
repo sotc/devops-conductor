@@ -43,3 +43,14 @@ CDK Fastapi deployment to Fargate sitting behind ALB for load balancing. This po
 2. cdk deploy
 3. After the deploy completes, you will see the endpoint printed out the terminal
 4. curl -v https://<myendpoint>.elb.amazonaws.com/
+ 
+### Tear down infrastructure
+  * cdk destory
+  * cdk diff
+  
+### Overview of app load balancing
+  
+  ![alb_diagram 001](https://user-images.githubusercontent.com/512362/175837475-681a0488-e743-45b8-b737-e108f98e5aec.jpeg)
+
+  
+  

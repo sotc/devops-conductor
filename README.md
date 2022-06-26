@@ -16,3 +16,10 @@ Port and deploy web app service
 2. ` curl -v -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1NTQ3NTU1NTUsImV4cCI6MjU1NDc1NTUwMCwiaWF0IjoxNTU0NzU1NTAwLCJqdGkiOiI5ZmRmMGE2Ni00YzllLTRlOTktODc4MC05YjdlOTNlMjFlMjciLCJ1c2VyX2lkIjoiMTA1YjM1MTgtNjQ2ZC00NjNlLWFkZGEtZDJiOTM5YzJkMDZkIiwidXNlcl9mdWxsX25hbWUiOiJCZXJ0cmFtIEdpbGZveWxlIiwidXNlcl9lbWFpbCI6Im51bGxAcGllZHBpcGVyLmNvbSJ9.-A8Gx18iTikKpedcxDlgcc7D8GMWFix0709Vfpbo1SI" 127.0.0.1:3001/v1/user/ `
 3. `curl -v  http://127.0.0.1:3001/healthz/`
 4. Open a web browser: `http://127.0.0.1:3001/docs`
+
+### Deployment into aws cloud
+1. Elastic Container Registery
+2. `aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com`
+3. docker build -t devops-conductor .
+4. docker tag devops-conductor:latest `<ecr endpoint>`/devops-conductor:latest
+5. docker push `<ecr endpoint>`/devops-conductor:latest
